@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Registration Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<style>
+		div.register{
+			float: right;
+			margin-top: -240px;
+		}
+		div.jumbotron{
+			height:50px;
+		}
+		div.text{
+			margin-top:-50px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+<center>
+<div class="jumbotron">
+	<div class="text">
+<h3>Welcome to the Lending Site</h3>
+	<h5>Lend or borrow money for the things you care about</h5>
+	</div>
+</div>
+</center>
+	<h3>Lender Registration</h3>
+	<form action="/lender_register" method="post">
+		{%csrf_token %}
+		First Name:<input type="text" name="first_name" required>
+		<br>
+		Last Name: <input type="text" name="last_name" required>
+		<br>
+		Email: <input type="email" name="email" required >
+		<br>
+		Password: <input type="password" name="password" required>
+		<br>
+		Money: <input type="number" name="money" required>
+		<br>
+		<br>
+		<input type="submit" value="Register" class="btn btn-danger">
+	</form>
+	<a href="/lender_login_page">Already a member?</a>
+	
+
+
+
+<div class="register">
+	<h3>Borrower Registration</h3>
+	<form action="/borrower_register" method="post">
+		{%csrf_token %}
+	First Name: <input type="text" 
+	name="first_name" required>
+	<br>
+	Last Name: <input type="text" 
+	name="last_name" required>
+	<br>
+	Email: <input type="email"
+	name="email" required>
+	<br>
+	Password: <input type="password"
+	name="password" required>
+	<br>
+	Need Money For: <input type="text"
+	name="purpose" required>
+	<br>
+	Description: <textarea name="description" id="" cols="30" rows="2" required></textarea>
+	<br>
+	Amount Needed: <input type="number" name="needed" required>
+	<br>
+	Raised : <input type="number" name="raised" required>
+	<br>
+	<br>
+	<input type="submit" value="Register" class="btn btn-primary">
+	</form>
+	<a href="/borrower_login_page">Already a member?</a>
+<br>
+</div>
+</div>
+</body>
+</html>

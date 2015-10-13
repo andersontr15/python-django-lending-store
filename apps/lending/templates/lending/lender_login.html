@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lender Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+
+<h3>Lender Login</h3>
+<form action="/lender_login" method="post">
+	{%csrf_token %}
+Email: <input type="email" name="email" required>
+<br>
+Password: <input type="password" name="password" required>
+<br>
+<input type="submit" value="Login" class="btn btn-primary">
+</form>
+<a href="/">Register</a>
+</div>
+</body>
+</html>
